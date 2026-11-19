@@ -1,0 +1,37 @@
+# --- Sistema operativo (Windows 11) ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# --- Editores / IDE ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Archivos temporales y logs ---
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+error_log
+php_errors.log
+
+# --- Sesiones de PHP guardadas en disco (si se llegaran a generar) ---
+sess_*
+/tmp/
+/sessions/
+
+# --- Dependencias y configuración local (por si el proyecto crece) ---
+/vendor/
+/node_modules/
+.env
+.env.*
+config.local.php
+
+# --- Comprimidos (por ejemplo, el ZIP de la entrega) ---
+*.zip
+*.rar
+*.7z

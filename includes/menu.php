@@ -10,7 +10,8 @@ $paginas = [
 ?>
 <nav class="menu">
     <?php foreach ($paginas as $archivo => $texto): ?>
-        <a href="<?= $archivo ?>" class="<?= ($archivo === $paginaActual) ? 'activo' : '' ?>">
+        <a href="<?= ($archivo === 'index.php') ? $raiz . 'index.php' : ($esIndex ? 'web/' : '') . $archivo ?>"
+           class="<?= ($archivo === $paginaActual) ? 'activo' : '' ?>">
             <?= $texto ?>
         </a>
     <?php endforeach; ?>
@@ -28,8 +29,8 @@ $paginas = [
     <p><strong>Hora actual:</strong> <?= date('H:i:s', $ahora) ?></p>
     <p><strong>Tiempo activo:</strong> <?= $minutos ?> minutos <?= $segundos ?> segundos</p>
     <p>
-        <a class="btn" href="index.php?accion=reiniciar">Reiniciar sesión</a>
-        <a class="btn btn-sec" href="index.php">Salir</a>
+        <a class="btn" href="<?= $raiz ?>index.php?accion=reiniciarr">Reiniciar sesión</a>
+        <a class="btn btn-sec" href="<?= $raiz ?>index.phpp">Salir</a>
     </p>
 </section>
 <?php endif; ?>

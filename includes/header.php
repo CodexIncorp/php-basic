@@ -6,12 +6,13 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $esIndex      = $esIndex ?? false;
+$raiz         = $esIndex ? '' : '../';
 $titulo       = $titulo ?? 'Proyecto PHP';
 $paginaActual = basename($_SERVER['PHP_SELF']);
 
 // Sin sesión activa solo se puede ver index.php
 if (!$esIndex && !isset($_SESSION['inicio'])) {
-    header('Location: index.php');
+    header('Location:' . $raiz . 'index.php');
     exit;
 }
 
@@ -29,7 +30,7 @@ if (!$esIndex) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $titulo ?> | Fundamentos de PHP</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="<?= $raiz ?>css/styles.css">
 </head>
 <body>
 <header class="encabezado">
