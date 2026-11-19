@@ -14,12 +14,15 @@ body {
 .encabezado {
     background: linear-gradient(135deg, #4f5bd5, #7a4fd5);
     color: #fff;
-    text-align: center;
-    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
 }
 
 .encabezado h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .menu {
@@ -40,17 +43,6 @@ body {
 .menu a.activo {
     background: #4f5bd5;
     color: #fff;
-}
-
-.panel-sesion {
-    background: #fff8e1;
-    border-bottom: 3px solid #f5b400;
-    padding: .8rem 1rem;
-    text-align: center;
-}
-
-.panel-sesion p {
-    margin: .2rem 0;
 }
 
 .contenido {
@@ -149,6 +141,31 @@ pre {
     background: #962d22;
 }
 
+.btn-mini {
+    display: block;
+    text-align: center;
+    background: rgba(255, 255, 255, .9);
+    color: #2b2f55;
+    text-decoration: none;
+    font-size: .75rem;
+    font-weight: 600;
+    padding: .25rem .7rem;
+    border-radius: 5px;
+}
+
+.btn-mini:hover {
+    background: #fff;
+}
+
+.btn-mini.btn-salir {
+    background: #c0392b;
+    color: #fff;
+}
+
+.btn-mini.btn-salir:hover {
+    background: #962d22;
+}
+
 .ok {
     color: #1e8e3e;
     font-weight: bold;
@@ -173,4 +190,30 @@ pre {
     background: #2b2f55;
     color: #dfe3ff;
     margin-top: 2rem;
+}
+
+.sesion {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 10px;
+    padding: .5rem .9rem;
+    font-size: .8rem;
+    line-height: 1.4;
+}
+
+.sesion-datos p {
+    margin: 0;
+}
+
+.sesion-datos strong {
+    font-variant-numeric: tabular-nums;
+}
+
+.sesion-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
 }
