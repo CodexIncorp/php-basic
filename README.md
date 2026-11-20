@@ -2,6 +2,8 @@
 
 Pequeño sitio web desarrollado en **PHP** que demuestra, con ejemplos que se ejecutan realmente en el servidor, el uso de variables, tipos de datos, estructuras de control, arreglos y sesiones.
 
+Proyecto elaborado con fines académicos.
+
 **Sitio publicado:** https://php-basic.infinityfree.io/
 
 ---
