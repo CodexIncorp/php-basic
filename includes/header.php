@@ -19,6 +19,8 @@ $base = rtrim(str_replace('\\', '/', $base), '/');
 
 // Sin sesión activa solo se puede ver index.php
 if (!$esIndex && !isset($_SESSION['inicio'])) {
+    $seccion = ucfirst(pathinfo($paginaActual, PATHINFO_FILENAME));
+    $_SESSION['aviso_login'] = 'Debes iniciar sesión para acceder a ' . $seccion . '.';
     header('Location: ' . $base . '/index.php');
     exit;
 }
@@ -31,8 +33,11 @@ if (!$esIndex) {
     ];
 }
 
-// Cálculo del tiempo de sesión
-$haySesion = isset($_SESSION['inicio']);
+// Cálculo del tiempo de sesión y lectura de aviso temporal
+$haySesion  = isset($_SESSION['inicio']);
+$avisoLogin = $_SESSION['aviso_login'] ?? null;
+unset($_SESSION['aviso_login']);
+
 if ($haySesion) {
     $inicio     = $_SESSION['inicio'];
     $ahora      = time();
