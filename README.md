@@ -2,7 +2,7 @@
 
 Pequeño sitio web desarrollado en **PHP** que demuestra, con ejemplos que se ejecutan realmente en el servidor, el uso de variables, tipos de datos, estructuras de control, arreglos y sesiones.
 
-**Sitio publicado:** https://SUBDOMINIO.infinityfreeapp.com <!-- Modificar después de publicar -->
+**Sitio publicado:** https://php-basic.infinityfree.io/
 
 ---
 
@@ -45,9 +45,6 @@ Aplicar de forma práctica los conceptos básicos de PHP:
 │
 ├── css/
 │   └── styles.css            # Hoja de estilos externa
-│
-└── img/
-    └── .gitkeep              # Mantiene la carpeta en Git
 ```
 
 ## Descripción de las páginas
