@@ -119,4 +119,4 @@ Abre `http://localhost:8000` en el navegador.
 - **Morales Jiménez Alexis Emiliano**
 - **Soancatl Niño Adrik Said**
 
-Programación Web / Instituto Tecnológico de Tuxtla Gutiérrez · 2026
+Programación Web | Instituto Tecnológico de Tuxtla Gutiérrez · 2026
