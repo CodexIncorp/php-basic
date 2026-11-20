@@ -6,6 +6,7 @@ $paginas = [
     'condicionales.php'  => 'Condicionales',
     'bucles.php'         => 'Bucles',
     'arreglos.php'       => 'Arreglos',
+    'formularios.php'    => 'Formularios',
     'sesiones.php'       => 'Sesiones',
 ];
 ?>
