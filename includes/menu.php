@@ -11,12 +11,24 @@ $paginas = [
 ];
 ?>
 <nav class="menu">
-    <?php foreach ($paginas as $archivo => $texto): ?>
+    <?php foreach ($paginas as $archivo => $texto):
+        $bloqueado = (!$haySesion && $archivo !== 'index.php');
+        $clases = trim(
+            (($archivo === $paginaActual) ? 'activo ' : '') .
+            ($bloqueado ? 'sin-sesion' : '')
+        );
+    ?>
         <a href="<?= $base . ($archivo === 'index.php' ? '' : '/web') . '/' . $archivo ?>"
-           class="<?= ($archivo === $paginaActual) ? 'activo' : '' ?>">
+           class="<?= $clases ?>"
+           <?= $bloqueado ? 'title="Inicia sesión para acceder"' : '' ?>>
             <?= $texto ?>
         </a>
     <?php endforeach; ?>
 </nav>
 
 <main class="contenido">
+<?php if (!$haySesion && !empty($avisoLogin)): ?>
+    <div class="aviso">
+        <strong>Sesión requerida:</strong> <?= htmlspecialchars($avisoLogin, ENT_QUOTES, 'UTF-8') ?>
+    </div>
+<?php endif; ?>
