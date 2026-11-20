@@ -29,7 +29,7 @@ Aplicar de forma práctica los conceptos básicos de PHP:
 
 ```
 /
-├── index.php                 # Inicia / reinicia la sesión (destruye la existente al entrar)
+├── index.php                 # Inicia / reinicia / cierra la sesión (?accion=iniciar | reiniciar | salir)
 │
 ├── web/
 │   ├── variables.php         # Variables y tipos de datos
@@ -54,7 +54,7 @@ Aplicar de forma práctica los conceptos básicos de PHP:
 
 | Archivo | Función | Qué demuestra |
 |---|---|---|
-| `index.php` | Punto de entrada. Destruye cualquier sesión existente y permite iniciar una nueva | `session_start()`, `time()`, `session_destroy()` |
+| `index.php` | Punto de entrada. Permite iniciar, reiniciar o cerrar la sesión; entrar a Inicio con una sesión activa no la destruye | `session_start()`, `time()`, `session_destroy()` |
 | `web/variables.php` | Ejemplos de variables | Declaración con `$`, tipos de dato, `echo`, `gettype()`, `var_dump()`, `date()`, `count()` |
 | `web/condicionales.php` | Toma de decisiones | `if / elseif / else` y `switch` evaluados con variables, la fecha del servidor y arreglos |
 | `web/bucles.php` | Repeticiones | `for`, `while` y `foreach`, incluida una tabla generada dinámicamente |
@@ -65,7 +65,7 @@ Aplicar de forma práctica los conceptos básicos de PHP:
 
 ## Funcionamiento de la sesión
 
-1. Al entrar a `index.php`, si existía una sesión **se destruye** (`session_destroy()`), por lo que hay que iniciar una nueva.
+1. Entrar a `index.php` (por ejemplo desde el menú **Inicio**) **no** afecta una sesión activa; solo **Salir** (`?accion=salir`) la destruye con `session_destroy()`.
 2. Al pulsar **Iniciar sesión** se guarda la hora de inicio con `time()` en `$_SESSION['inicio']`.
 3. En **todas las páginas** se muestra el panel de sesión:
 
@@ -76,7 +76,7 @@ Tiempo activo:      2 minutos 38 segundos
 ```
 
 4. El tiempo activo se calcula como `time() - $_SESSION['inicio']` y se convierte a minutos y segundos.
-5. **Reiniciar sesión** destruye la sesión y crea una nueva con una hora de inicio nueva. **Salir** regresa a `index.php`.
+5. **Reiniciar sesión** destruye la sesión y crea una nueva con una hora de inicio nueva. **Salir** destruye la sesión y regresa a `index.php`.
 6. Si se intenta abrir una página sin sesión activa, `header.php` redirige a `index.php`.
 
 ## Reutilización de código y diseño

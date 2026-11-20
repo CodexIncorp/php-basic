@@ -26,12 +26,15 @@ if ($accion === 'reiniciar') {
     exit;
 }
 
-// Si se entra al index con una sesión existente, se destruye
-if (isset($_SESSION['inicio'])) {
+// Salir: destruye la sesión (único modo de cerrarla además de Reiniciar)
+if ($accion === 'salir') {
     $_SESSION = [];
     session_destroy();
-    $mensaje = 'La sesión anterior fue destruida. Debes iniciar una nueva.';
+    $mensaje = 'Sesión finalizada. Debes iniciar una nueva para navegar.';
 }
+
+// Entrar al index con una sesión activa NO la destruye: se puede volver a Inicio libremente
+$sesionActiva = isset($_SESSION['inicio']);
 
 require __DIR__ . '/includes/header.php';
 require __DIR__ . '/includes/menu.php';
@@ -48,8 +51,15 @@ require __DIR__ . '/includes/menu.php';
     <ol>
         <li>Pulsa <strong>Iniciar sesión</strong>: PHP guarda la hora con <code>time()</code> en <code>$_SESSION</code>.</li>
         <li>Navega por las páginas; arriba verás la hora de inicio, la hora actual y el tiempo activo.</li>
-        <li>Al volver a esta página la sesión se destruye con <code>session_destroy()</code>.</li>
+        <li>Pulsa <strong>Salir</strong> para destruir la sesión con <code>session_destroy()</code>.</li>
     </ol>
-    <p><a class="btn" href="index.php?accion=iniciar">INICIAR SESIÓN</a></p>
+    <p>
+        <?php if ($sesionActiva): ?>
+            <a class="btn" href="web/variables.php">CONTINUAR</a>
+            <a class="btn" href="index.php?accion=reiniciar">REINICIAR SESIÓN</a>
+        <?php else: ?>
+            <a class="btn" href="index.php?accion=iniciar">INICIAR SESIÓN</a>
+        <?php endif; ?>
+    </p>
 </div>
 <?php require __DIR__ . '/includes/footer.php'; ?>

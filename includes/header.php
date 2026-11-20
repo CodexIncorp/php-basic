@@ -64,7 +64,7 @@ if ($haySesion) {
         </div>
         <div class="sesion-acciones">
             <a class="btn-mini" href="<?= $base ?>/index.php?accion=reiniciar">⟳ Reiniciar</a>
-            <a class="btn-mini btn-salir" href="<?= $base ?>/index.php">Salir</a>
+            <a class="btn-mini btn-salir" href="<?= $base ?>/index.php?accion=salir">Salir</a>
         </div>
     </div>
     <?php endif; ?>
