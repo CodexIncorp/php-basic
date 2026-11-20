@@ -277,3 +277,6 @@ button.btn {
 .alerta-ok h3 {
     color: #1e8e3e;
 }
+.menu a.sin-sesion {
+    opacity: 0.65;
+}
