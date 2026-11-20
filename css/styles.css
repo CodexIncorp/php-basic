@@ -218,3 +218,62 @@ pre {
     flex-direction: column;
     gap: .3rem;
 }
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.campo label {
+    font-weight: 600;
+    font-size: .92rem;
+    color: #2b2f55;
+}
+
+.campo input,
+.campo select {
+    padding: .55rem .75rem;
+    border: 1px solid #ccd2e3;
+    border-radius: 6px;
+    font: inherit;
+    background: #fff;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #4f5bd5;
+    box-shadow: 0 0 0 3px rgba(79, 91, 213, .15);
+}
+
+button.btn {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    align-self: flex-start;
+    margin: .3rem 0 0;
+}
+
+.alerta-error {
+    border-left: 5px solid #c0392b;
+    background: #fdeaea;
+}
+
+.alerta-error h3 {
+    color: #c0392b;
+}
+
+.alerta-ok {
+    border-left: 5px solid #1e8e3e;
+    background: #e8f8ec;
+}
+
+.alerta-ok h3 {
+    color: #1e8e3e;
+}

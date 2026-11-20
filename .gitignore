@@ -30,7 +30,8 @@ sess_*
 .env
 .env.*
 config.local.php
-
+*.yaml
+*-version
 # --- Comprimidos (por ejemplo, el ZIP de la entrega) ---
 *.zip
 *.rar
