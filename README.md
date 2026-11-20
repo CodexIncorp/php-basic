@@ -100,7 +100,7 @@ Abre `http://localhost:8000` en el navegador.
 
 1. Crear una cuenta de hosting en [infinityfree.com](https://infinityfree.com) y un subdominio gratuito.
 2. Abrir el **Online File Manager** (o conectar por FTP).
-3. Subir a la carpeta `htdocs`: `index.php`, y las carpetas `web/`, `includes/`, `css/` e `img/`.
+3. Subir a la carpeta `htdocs`: `index.php`, y las carpetas `web/`, `includes/` e `css/`.
 4. Abrir el enlace público y comprobar que todas las páginas son navegables desde el menú.
 
 ---
